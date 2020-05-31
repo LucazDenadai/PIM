@@ -1,0 +1,11 @@
+C:\Users\Lucaz\source\repos\Demo\Demo\bin\Debug\Demo.exe.config
+C:\Users\Lucaz\source\repos\Demo\Demo\bin\Debug\Demo.exe
+C:\Users\Lucaz\source\repos\Demo\Demo\bin\Debug\Demo.pdb
+C:\Users\Lucaz\source\repos\Demo\Demo\obj\Debug\Demo.csprojAssemblyReference.cache
+C:\Users\Lucaz\source\repos\Demo\Demo\obj\Debug\Demo.Properties.Resources.resources
+C:\Users\Lucaz\source\repos\Demo\Demo\obj\Debug\Demo.csproj.GenerateResource.cache
+C:\Users\Lucaz\source\repos\Demo\Demo\obj\Debug\Demo.csproj.CoreCompileInputs.cache
+C:\Users\Lucaz\source\repos\Demo\Demo\obj\Debug\Demo.exe
+C:\Users\Lucaz\source\repos\Demo\Demo\obj\Debug\Demo.pdb
+C:\Users\Lucaz\source\repos\Demo\Demo\obj\Debug\Demo.Cliente.resources
+C:\Users\Lucaz\source\repos\Demo\Demo\obj\Debug\Demo.Login.resources
