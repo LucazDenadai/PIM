@@ -5,13 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace Demo.Dal
 {
     public class Connect
     {
-        string ConnectionString = "Server=localhost;Database=PIM;User Id=sa;" +
-                         "Password=root;";
+        string ConnectionString = ConfigurationManager.ConnectionStrings["conection"].ToString();
+
+        // string ConnectionString = "Server=localhost;Database=PIM;User Id=sa Password=root;";
         SqlConnection conn;
 
         public SqlConnection OpenConnection()

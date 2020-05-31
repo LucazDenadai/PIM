@@ -62,7 +62,6 @@
             this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Senha";
-            this.label2.Visible = false;
             // 
             // tLogin
             // 
