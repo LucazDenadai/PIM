@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Demo.Entity
 {
     public abstract class PessoaEntity
-    {
+    { 
         public string Documento { get; set; }
 
         public string Nome { get; set; }

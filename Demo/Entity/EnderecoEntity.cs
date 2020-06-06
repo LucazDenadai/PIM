@@ -8,6 +8,8 @@ namespace Demo.Entity
 {
     public class EnderecoEntity
     {
+        public int Id { get; set; }
+
         public string Cep { get; set; }
 
         public string Logradouro { get; set; }

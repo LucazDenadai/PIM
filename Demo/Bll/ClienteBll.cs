@@ -54,5 +54,75 @@ namespace Demo.Bll
             else
                 return 0;
         }
+
+        public ClienteEntity Seacrh(ClienteEntity cliente)
+        {
+            if (cliente == default)
+                return null;
+
+            var comand = "SELECT * FROM tbCliente where idCliente = " + cliente.id;
+
+            ClienteEntity result = _dal.Search(comand);
+
+            return result;
+        }
+
+        public EnderecoEntity SeacrhEndereco(int idEndereco)
+        {
+            if (idEndereco == default)
+                return null;
+
+            var comand = "SELECT * FROM tbEndereco where idEndereco = " + idEndereco;
+
+            EnderecoEntity result = _dal.SearchEndereco(comand);
+
+            return result;
+        }
+
+        public bool Update(ClienteEntity cliente)
+        {
+            if (cliente == default)
+                return false;
+
+            var comand = "UPDATE tbCliente" +
+                "SET nome = " + cliente.Nome + ", " +
+                "email = " + cliente.Email + ", " +
+                "telefone_1 = " + cliente.Telefone + ", " +
+                "data_cadastro = " + cliente.dataCadastro + ", " +
+                "data_nascimento = " + cliente.dataNascimento + ", " +
+                "CPF_CNPJ = " + cliente.Documento + ", " +
+                "WHERE = " + cliente.id + ";";
+
+            //Atualizar endereço
+            comand = comand + "UPDATE TbEndereco SET " +
+                "[CEP] = " + cliente.Endereco.Id + ", " +
+                "[LOGRADOURO] = " + cliente.Endereco.Id + ", " +
+                "[NUMERO] = "+ cliente.Endereco.Id + ", " +
+                "[COMPLEMENTO] = " + cliente.Endereco.Id + ", " +
+                "[CIDADE] = " + cliente.Endereco.Id + ", " +
+                "[ESTADO] = " + cliente.Endereco.Id + ", " +
+                "WHERE IdEnedereco = " + cliente.Endereco.Id;
+
+            bool result = _dal.Update(comand);
+
+            return result;
+        }
+
+        public bool Delete(ClienteEntity cliente)
+        {
+            if (cliente == default)
+                return false;
+
+            var comand = "DELETE TbCliente" +
+                "WHERE = " + cliente.id + ";";
+
+            //deleta endereço
+            comand = comand + "DELETE TbEndereco" +
+                "WHERE IdEnedereco = " + cliente.Endereco.Id;
+
+            bool result = _dal.Delete(comand);
+
+            return result;
+        }
     }
 }
