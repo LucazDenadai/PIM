@@ -1,4 +1,6 @@
-﻿namespace Demo
+﻿using System.Windows.Forms;
+
+namespace Demo
 {
     partial class Login
     {
@@ -91,6 +93,8 @@
             this.Controls.Add(this.button1);
             this.Name = "Login";
             this.Text = "Octus";
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

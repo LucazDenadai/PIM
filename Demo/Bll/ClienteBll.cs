@@ -28,12 +28,12 @@ namespace Demo.Bll
             if (idEndereco != 0)
             {
                 comando = $"INSERT INTO tbCliente(nome, email, telefone_1, telefone_2, data_cadastro, data_nascimento, CPF_CNPJ, id_Endereco) OUTPUT INSERTED.[IDCLIENTE] " +
-                $"VALUES('{cliente.Nome}', '{cliente.Email}', '{cliente.Telefone}', {cliente.TelefoneAdicional}', '{DateTime.Now.Date}', '{cliente.dataNascimento}', '{cliente.Documento}', '{idEndereco}');";
+                $"VALUES('{cliente.Nome}', '{cliente.Email}', '{cliente.Telefone}', '{cliente.TelefoneAdicional}', '{DateTime.Now.Date}', '{cliente.dataNascimento}', '{cliente.Documento}', '{idEndereco}');";
             }
             else
             {
                 comando = $"INSERT INTO tbCliente(nome, email, telefone_1, telefone_2, data_cadastro, data_nascimento, CPF_CNPJ) OUTPUT INSERTED.[IDCLIENTE] " +
-                $"VALUES('{cliente.Nome}', '{cliente.Email}', '{cliente.Telefone}', {cliente.TelefoneAdicional}', '{DateTime.Now.Date}', '{cliente.dataNascimento}', '{cliente.Documento}');";
+                $"VALUES('{cliente.Nome}', '{cliente.Email}', '{cliente.Telefone}', '{cliente.TelefoneAdicional}', '{DateTime.Now.Date}', '{cliente.dataNascimento}', '{cliente.Documento}');";
             }
 
             var result = _dal.Insert(comando);

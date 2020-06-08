@@ -19,6 +19,7 @@ namespace Demo.Forms
 
         public ClienteView()
         {
+            cliente.Endereco = new EnderecoEntity();
             InitializeComponent();
         }
 
@@ -74,8 +75,10 @@ namespace Demo.Forms
             var result = bll.Search(textBox1.Text, textBox2.Text);
 
             if (result == null)
+            {
                 MessageBox.Show("Erro ao fazer a consulta");
-
+                return;
+            }
             cliente = result;
 
             cliente.Endereco = bll.SearchEndereco(cliente.Endereco.Id);
@@ -118,6 +121,13 @@ namespace Demo.Forms
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Cliente cliente = new Cliente();
+            cliente.Show();
+            Hide();
         }
     }
 }

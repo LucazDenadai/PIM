@@ -1,4 +1,6 @@
-﻿namespace Demo.Forms
+﻿using System.Windows.Forms;
+
+namespace Demo.Forms
 {
     partial class ClienteView
     {
@@ -55,6 +57,7 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -296,11 +299,23 @@
             this.label13.TabIndex = 39;
             this.label13.Text = "Telefone adicional";
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(402, 12);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 40;
+            this.button4.Text = "Voltar";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // ClienteView
             // 
+            this.StartPosition = FormStartPosition.CenterScreen;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(507, 335);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.textBox11);
             this.Controls.Add(this.textBox3);
@@ -329,7 +344,7 @@
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label6);
             this.Name = "ClienteView";
-            this.Text = "ClienteView";
+            this.Text = "Buscar cliente";
             this.Load += new System.EventHandler(this.ClienteView_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -365,5 +380,6 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button button4;
     }
 }
