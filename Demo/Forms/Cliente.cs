@@ -1,5 +1,6 @@
 ﻿using Demo.Bll;
 using Demo.Entity;
+using Demo.Forms;
 using System;
 using System.Windows.Forms;
 
@@ -30,6 +31,7 @@ namespace Demo
             cliente.Nome = nome.Text;
             cliente.Email = email.Text;
             cliente.Telefone = tel.Text;
+            cliente.TelefoneAdicional = textBox1.Text;
             cliente.Endereco = new EnderecoEntity();
             cliente.Endereco.Cep = cep.Text;
             cliente.Endereco.Logradouro = log.Text;
@@ -97,6 +99,18 @@ namespace Demo
         }
 
         private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ClienteView form = new ClienteView();
+            form.Show();
+            Hide();
+        }
+
+        private void tel_TextChanged_1(object sender, EventArgs e)
         {
 
         }

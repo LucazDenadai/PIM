@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -51,7 +52,7 @@ namespace Demo.Dal
                 }
                 con.CloseConnection();
 
-                return idEnd ;
+                return idEnd;
             }
             catch (Exception ex)
             {
@@ -69,17 +70,23 @@ namespace Demo.Dal
                 SqlCommand sqlCommand = new SqlCommand(comand, connection);
                 SqlDataReader dr = sqlCommand.ExecuteReader();
 
-                int idEnd = 0;
+                if (dr.HasRows == false)
+                    return null;
 
                 ClienteEntity cliente = new ClienteEntity();
+                cliente.Endereco = new EnderecoEntity();
 
-                if (dr.HasRows)
+                while (dr.Read())
                 {
-                    while (dr.Read())
-                    {
-                        idEnd = int.Parse(dr.GetValue(0).ToString());
-                    }
+                    cliente.Id = Convert.ToInt32(dr["IDCLIENTE"]);
+                    cliente.Documento = Convert.ToString(dr["CPF_CNPJ"]);
+                    cliente.Nome = Convert.ToString(dr["NOME"]);
+                    cliente.Email = Convert.ToString(dr["EMAIL"]);
+                    cliente.Telefone = Convert.ToString(dr["TELEFONE_1"]);
+                    cliente.TelefoneAdicional = Convert.ToString(dr["TELEFONE_2"]);
+                    cliente.Endereco.Id = Convert.ToInt32(dr["ID_ENDERECO"]);
                 }
+
                 con.CloseConnection();
 
                 return cliente;
@@ -100,20 +107,25 @@ namespace Demo.Dal
                 SqlCommand sqlCommand = new SqlCommand(comand, connection);
                 SqlDataReader dr = sqlCommand.ExecuteReader();
 
-                int idEnd = 0;
+                EnderecoEntity endereco = new EnderecoEntity();
 
-                EnderecoEntity cliente = new EnderecoEntity();
+                if (dr.HasRows == false)
+                    return null;
 
-                if (dr.HasRows)
+                while (dr.Read())
                 {
-                    while (dr.Read())
-                    {
-                        idEnd = int.Parse(dr.GetValue(0).ToString());
-                    }
+                    endereco.Id = Convert.ToInt32(dr["IDENDERECO"]);
+                    endereco.Cep = Convert.ToString(dr["CEP"]);
+                    endereco.Logradouro = Convert.ToString(dr["LOGRADOURO"]);
+                    endereco.Numero = Convert.ToString(dr["NUMERO"]);
+                    endereco.Cidade = Convert.ToString(dr["CIDADE"]);
+                    endereco.Estado = Convert.ToString(dr["ESTADO"]);
+                    endereco.Complemento = Convert.ToString(dr["COMPLEMENTO"]);
                 }
+
                 con.CloseConnection();
 
-                return cliente;
+                return endereco;
             }
             catch (Exception ex)
             {

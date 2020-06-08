@@ -8,7 +8,7 @@ namespace Demo.Entity
 {
     public class ClienteEntity : PessoaEntity
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
         public string Status { get; set; }
     }

@@ -16,6 +16,8 @@ namespace Demo.Entity
 
         public string Telefone { get; set; }
 
+        public string TelefoneAdicional { get; set; }
+
         public string dataCadastro { get; set; }
 
         public string dataNascimento { get; set; }

@@ -33,7 +33,6 @@
             this.documento = new System.Windows.Forms.TextBox();
             this.nome = new System.Windows.Forms.TextBox();
             this.email = new System.Windows.Forms.TextBox();
-            this.tel = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cep = new System.Windows.Forms.TextBox();
             this.log = new System.Windows.Forms.TextBox();
@@ -52,6 +51,10 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.tel = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -95,17 +98,9 @@
             // 
             this.email.Location = new System.Drawing.Point(30, 146);
             this.email.Name = "email";
-            this.email.Size = new System.Drawing.Size(267, 20);
+            this.email.Size = new System.Drawing.Size(165, 20);
             this.email.TabIndex = 4;
             this.email.TextChanged += new System.EventHandler(this.email_TextChanged);
-            // 
-            // tel
-            // 
-            this.tel.Location = new System.Drawing.Point(302, 146);
-            this.tel.Name = "tel";
-            this.tel.Size = new System.Drawing.Size(159, 20);
-            this.tel.TabIndex = 5;
-            this.tel.TextChanged += new System.EventHandler(this.tel_TextChanged);
             // 
             // label3
             // 
@@ -191,14 +186,14 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(238, 93);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 13);
+            this.label5.Size = new System.Drawing.Size(81, 13);
             this.label5.TabIndex = 15;
-            this.label5.Text = "Nome Completo";
+            this.label5.Text = "Nome completo";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(299, 132);
+            this.label6.Location = new System.Drawing.Point(198, 130);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(49, 13);
             this.label6.TabIndex = 16;
@@ -269,11 +264,49 @@
             this.label13.TabIndex = 23;
             this.label13.Text = "Estado";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(364, 22);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(97, 23);
+            this.button2.TabIndex = 24;
+            this.button2.Text = "Buscar Cliente";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // tel
+            // 
+            this.tel.Location = new System.Drawing.Point(201, 146);
+            this.tel.Name = "tel";
+            this.tel.Size = new System.Drawing.Size(118, 20);
+            this.tel.TabIndex = 25;
+            this.tel.TextChanged += new System.EventHandler(this.tel_TextChanged_1);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(326, 146);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(135, 20);
+            this.textBox1.TabIndex = 26;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(323, 130);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(94, 13);
+            this.label14.TabIndex = 27;
+            this.label14.Text = "Telefone adicional";
+            // 
             // Cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(496, 330);
+            this.ClientSize = new System.Drawing.Size(506, 330);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tel);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
@@ -292,7 +325,6 @@
             this.Controls.Add(this.log);
             this.Controls.Add(this.cep);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.tel);
             this.Controls.Add(this.email);
             this.Controls.Add(this.nome);
             this.Controls.Add(this.documento);
@@ -312,7 +344,6 @@
         private System.Windows.Forms.TextBox documento;
         private System.Windows.Forms.TextBox nome;
         private System.Windows.Forms.TextBox email;
-        private System.Windows.Forms.TextBox tel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox cep;
         private System.Windows.Forms.TextBox log;
@@ -331,5 +362,9 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox tel;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label14;
     }
 }
